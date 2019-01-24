@@ -4,8 +4,7 @@ set -euo pipefail
 
 GO_VERSION="1.11.4"
 
-env
-set
+env | grep -F CF_STACK
 if [ $CF_STACK == "cflinuxfs2" ]; then
     GO_SHA256="8faf0b1823cf25416aa5ffdac6eef2f105114abe41b31b3d020102ae7661a5ae"
 elif [ $CF_STACK == "cflinuxfs3" ]; then

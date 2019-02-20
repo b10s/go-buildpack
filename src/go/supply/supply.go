@@ -101,15 +101,6 @@ func (gs *Supplier) SelectVendorTool() error {
 		return nil
 	}
 
-	isGoPath, err := gs.isGoPath()
-	if err != nil {
-		return err
-	}
-	if isGoPath {
-		gs.Log.Error(warnings.GBError())
-		return errors.New("gb unsupported")
-	}
-
 	isGodep, err := libbuildpack.FileExists(godepsJSONFile)
 	if err != nil {
 		return err
